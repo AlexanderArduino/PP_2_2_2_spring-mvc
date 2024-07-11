@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:charset="utf-8">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Cars</title>
+    <meta charset="UTF-8"/>
+    <title>Cars by count</title>
 </head>
 <body>
-<h1>This is cars page</h1>
 
-<a href="/">Return to main page</a>
+<!-- Используя просто строчный вывод текста -->
+<p>Selected count <span th:text="${count}"></span></p>
+<div th:each="car : ${carsByCount}">
+    <p><span th:text="${car.getCarModel()}"></span>, <span th:text="${car.getCarType()}"></span>, <span th:text="${car.getGosNomer()}"></span></p>
+</div>
 
-<p th:text="${carsParamerts}"/>
-</main>
+<!-- Используя таблицу -->
+<table th:border="1">
+    <thead>
+    <tr>
+        <th>Car model</th>
+        <th>Car type</th>
+        <th>Car Gos Nomer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Использование Thymeleaf для отображения данных из модели -->
+    <tr th:each="car : ${carsByCount}">
+        <td th:text="${car.getCarModel()}">Car Model</td>
+        <td th:text="${car.getCarType()}">Car Type</td>
+        <td th:text="${car.getGosNomer()}">Car Gos Nomer</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

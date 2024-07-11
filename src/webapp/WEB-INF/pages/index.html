@@ -8,10 +8,24 @@
 <body>
 <div>
     <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
+        <p th:text="${msg}"></p>
     </th:block>
 </div>
 
-<a href="cars">Go to cars page</a>
+<h1><b>Vsego v spiske 6 mashin</b></h1>
+<h2>Nige ssylki GET zaprosov (dlya udobstva)</h2>
+<p><a href="cars?count=-1">GET /cars?count=-1</a></p>
+<p><a href="cars?count=0">GET /cars?count=0</a></p>
+<p><a href="cars?count=1">GET /cars?count=1</a></p>
+<p><a href="cars?count=2">GET /cars?count=2</a></p>
+<p><a href="cars?count=3">GET /cars?count=3</a></p>
+<p><a href="cars?count=4">GET /cars?count=4</a></p>
+<p><a href="cars?count=5">GET /cars?count=5</a></p>
+<p><a href="cars?count=6">GET /cars?count=6</a></p>
+<p><a href="cars?count=7">GET /cars?count=7</a></p>
+<p><a href="cars?count=10">GET /cars?count=10</a></p>
+
+
+
 </body>
 </html>
